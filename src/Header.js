@@ -4,6 +4,7 @@ import amazonLogo from './assets/images/amazon-logo-white.png';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import SearchIcon from '@material-ui/icons/Search';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 
 function Header() {
     return (
@@ -28,7 +29,7 @@ function Header() {
                     <p>All</p>
                     <ArrowDropDownIcon/>
                 </div>
-                <input type="text"/>
+                <input type="text" autofocus="autofocus"/>
                 <div className="header_center_SearchContainer">
                     <SearchIcon className="header__centerSearchIcon"/>
                 </div>
@@ -36,7 +37,25 @@ function Header() {
                 
             </div>
             <div className="header__right">
-                Header Right
+                <div className="header__rightCountry">
+                    country
+                </div>
+                <div className="header__rightSignIn">
+                    SignIn
+                </div>
+                <div className="header__rightReturns">
+                    <p className="header__rightReturnstag">Returns</p>
+                    <p className="header__rightOrderstag">&#38; Orders</p>
+                </div>
+                <div className="header__rightCart">
+                    <div className="header__rightCartContent">
+                        {/* <p>0</p> */}
+                        <ShoppingCartOutlinedIcon />
+                    </div>
+                    <p className="header__rightCartTitle">Cart</p>
+                    
+
+                </div>
             </div>
         </div>
     )
