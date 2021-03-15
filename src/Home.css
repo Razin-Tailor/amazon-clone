@@ -1,0 +1,6 @@
+.home__carouselImage {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -150px;
+    mask-image: linear-gradient(to bottom, black 0, transparent 100%) !important;
+}

@@ -3,6 +3,9 @@
   display: flex;
   justify-content: space-between;
   flex: 1;
+  position: sticky;
+  top:0;
+  z-index: 100;
 }
 .header__left {
   display: flex;
@@ -38,10 +41,13 @@
 }
 .header__leftAddressIcon {
   color: white;
-  padding-top: 18px;
+  align-items: center;
+  align-self: center;
+  /* padding-top: 18px; */
 }
 .header__leftAddress {
   display: flex;
+  justify-content: center;
 }
 .header__leftAddress:hover {
   cursor: pointer;
@@ -56,6 +62,9 @@
   border-radius: 2px;
 }
 .header__leftAddressDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 10px;
 }
 .header__leftAddressDetail > p {
@@ -76,13 +85,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 24px;
   padding-left: 5px;
 }
-.header__center > input {
+.header__center > div > input {
   display: flex;
   width: 100%;
-  height: 57%;
+  height: 100%;
+  /* height:inherit; */
+  padding: 8px;
+  border-width:0px;
+  border:none;
+}
+
+.header__center > div > input:focus {
+  outline: none;
 }
 .header__centerLeftButton {
   display: flex;
@@ -100,46 +117,45 @@
 }
 .header__centerSearchIcon {
   align-self: center;
-  padding: 10px;
 }
 .header__centerSearchIcon:hover {
   cursor: pointer;
 }
 
-.header__centerSearchIcon {
-  color: black;
-}
-.header_center_SearchContainer {
+.header__searchContainer {
   display: flex;
-  background-color: #febd6a;
-  height: 65%;
+  background-color: #cd9042;
+  align-items: center;
+  
+  
+  
 }
 .header__right {
   flex: 0.3;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.header__rightReturnstag {
-  margin-bottom: 0px;
+.header__option {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+}
+.header__optionLineOne {
   font-size: small;
 }
-.header__rightOrderstag {
-  margin-top: 0px;
-  font-weight: 600;
-}
-.header__rightReturns {
+.header__optionLineTwo {
+  /* font-size: 13px; */
+  font-weight: 800;
 }
 .header__rightCart {
   color: white;
   display: flex;
   align-items: center;
 }
-.header__rightCartContent {
-  margin: 0px !important;
-}
-.header__rightCartTitle {
+.header__cartIcon {
   margin-left: 10px;
-}
-.header__rightReturns {
-  color: white;
+  margin-right: 10px;
 }
