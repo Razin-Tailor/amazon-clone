@@ -7,6 +7,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
 function Header() {
+  // React.useState
   return (
     <div className="header">
       <div className="header__left">
@@ -75,7 +76,7 @@ function Header() {
         </div>
         <div className="header__rightCart">
           <ShoppingCartOutlinedIcon />
-          <span className="header__optionLineTwo header__cartIcon">2</span>
+          <span className="header__optionLineTwo header__cartIcon">0</span>
         </div>
       </div>
     </div>

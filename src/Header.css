@@ -41,6 +41,7 @@
 }
 .header__leftAddressIcon {
   color: white;
+  justify-content: center;
   align-items: center;
   align-self: center;
   /* padding-top: 18px; */
