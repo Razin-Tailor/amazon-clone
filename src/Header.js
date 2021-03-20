@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import amazonLogo from "./assets/images/amazon-logo-white.png";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-
+import { auth, provider } from "./firebase";
 function Header() {
-  // React.useState
+  const [user, setUser] = useState(null);
+  const signin = (e) => {
+    e.preventDefault();
+    auth
+      .signInWithPopup(provider)
+      .then((u) => {
+        console.log(u.user.displayName);
+        setUser(u.user.displayName);
+      })
+      .catch((error) => alert(error.message));
+  };
+
   return (
     <div className="header">
       <div className="header__left">
@@ -66,8 +77,13 @@ function Header() {
         {/* <div className="header__option">
           <span>Country</span>
         </div> */}
-        <div className="header__option">
-          <span className="header__optionLineOne">Hello, SignIn</span>
+        <div className="header__option" onClick={signin}>
+          {user ? (
+            <span className="header__optionLineOne">Hello, {user}</span>
+          ) : (
+            <span className="header__optionLineOne">Hello, SignIn</span>
+          )}
+
           <span className="header__optionLineTwo">Accounts &#38; Lists </span>
         </div>
         <div className="header__option">
