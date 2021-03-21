@@ -9,6 +9,7 @@ import { auth, provider } from "./firebase";
 import { menuItems } from "./constants";
 function Header() {
   const [user, setUser] = useState(null);
+  const [headerMenuItem, setHeaderMenuItem] = useState("All");
   const signin = (e) => {
     e.preventDefault();
     auth
@@ -41,17 +42,26 @@ function Header() {
           <div className="input-group">
             <div className="input-group-prepend">
               <button
-                className="btn btn-outline-secondary dropdown-toggle"
+                className="btn btn-outline-secondary dropdown-toggle f-sm"
                 type="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                All
+                {headerMenuItem}
               </button>
-              <div className="dropdown-menu">
+              <div className="dropdown-menu header_dropdownMenu">
                 {menuItems.map((menuItem) => (
-                  <a className="dropdown-item" href="#">
+                  <a
+                    className="dropdown-item header__dropdownItem"
+                    href="#"
+                    onClick={() => {
+                      console.log("Header menu item: ", { headerMenuItem });
+                      console.log("menu item: ", { menuItem });
+                      setHeaderMenuItem(menuItem);
+                      console.log("Header menu item: ", { headerMenuItem });
+                    }}
+                  >
                     {menuItem}
                   </a>
                 ))}

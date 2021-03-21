@@ -2,18 +2,22 @@
     background: #242F3E !important;
     margin: 0%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: left;
     align-items: center;
     overflow: hidden;
-    flex-wrap: nowrap;
+    /* flex-wrap: nowrap; */
     word-wrap: normal   ;
 }
+.subheader__li {
+    list-style-type:none; 
+}
+/* list-style-type:none; */
 .f-sm {
     font-size: small !important;
 }
 .subheader__img {
     object-fit: contain;
-    width: 90%;
+    width: 100%;
 }
 .subheader__container {
     display: flex;

@@ -5,21 +5,21 @@ import { subMenuItems } from "./constants";
 function SubHeader() {
   return (
     <div className="subheader__container">
-      <ul className="nav subheader__nav align-items-center">
-        <li className="nav-item align-items-center align-self-center text-white">
+      <ul className="subheader__nav align-items-center">
+        <li className="subheader__li text-white">
           <span className="align-items-center align-self-center">
             <MenuIcon />
           </span>
           <span className="align-items-center align-self-center">All</span>
         </li>
         {subMenuItems.map((menuItem) => (
-          <li className="nav-item">
+          <li className="subheader__li">
             <a className="nav-link text-white f-sm" href="#">
               {menuItem}
             </a>
           </li>
         ))}
-        <li className="nav-item">
+        <li className="subheader__li">
           <a className="nav-link text-white" href="#">
             <img
               className="subheader__img"

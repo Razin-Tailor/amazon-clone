@@ -1,6 +1,23 @@
 .clickable {
   cursor: pointer;
 }
+.header_dropdownMenu {
+  padding: 0 !important;
+}
+@media (min-width: 500px) {
+  .dropdown-menu{
+        height:100vh;
+        overflow-y:auto;
+     }
+  }
+.header__dropdownItem {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: small;
+}
+.f-sm {
+  font-size: small !important;
+}
 .header {
   background-color: #131921;
   display: flex;
