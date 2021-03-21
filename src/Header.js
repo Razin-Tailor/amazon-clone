@@ -6,6 +6,7 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { auth, provider } from "./firebase";
+import { menuItems } from "./constants";
 function Header() {
   const [user, setUser] = useState(null);
   const signin = (e) => {
@@ -49,19 +50,11 @@ function Header() {
                 All
               </button>
               <div className="dropdown-menu">
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-                <div role="separator" className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
-                  Separated link
-                </a>
+                {menuItems.map((menuItem) => (
+                  <a className="dropdown-item" href="#">
+                    {menuItem}
+                  </a>
+                ))}
               </div>
             </div>
             <input type="text" className="form-control" />
