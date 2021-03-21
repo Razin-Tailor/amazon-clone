@@ -1,3 +1,6 @@
+.clickable {
+  cursor: pointer;
+}
 .header {
   background-color: #131921;
   display: flex;

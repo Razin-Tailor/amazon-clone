@@ -14,7 +14,7 @@ function Header() {
     auth
       .signInWithPopup(provider)
       .then((u) => {
-        console.log(u.user.displayName);
+        console.log(u.user);
         setUser(u.user.displayName);
       })
       .catch((error) => alert(error.message));
@@ -70,11 +70,13 @@ function Header() {
         {/* <div className="header__option">
           <span>Country</span>
         </div> */}
-        <div className="header__option" onClick={signin}>
+        <div className="header__option">
           {user ? (
             <span className="header__optionLineOne">Hello, {user}</span>
           ) : (
-            <span className="header__optionLineOne">Hello, SignIn</span>
+            <span className="header__optionLineOne clickable" onClick={signin}>
+              Hello, SignIn
+            </span>
           )}
 
           <span className="header__optionLineTwo">Accounts &#38; Lists </span>
